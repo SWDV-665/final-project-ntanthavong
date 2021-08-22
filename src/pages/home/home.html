@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="../../assets/imgs/dinder_logo.png" class="nav-brand" alt="Dinder Logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="../../assets/imgs/dinder_logo.png" class="dinder-logo" alt="Dinder Logo">
+
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label>Location</ion-label>
+        <ion-input type="text" [(ngModel)]="coords" name="coords" text-right id="coords"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Maximum Price</ion-label>
+        <ion-select [(ngModel)]="maxPrice" multiple="False" cancelText="Cancel" okText="Select" name="maxPrice">
+          <ion-option value="1" selected="true">💲</ion-option>
+          <ion-option value="2">💲💲</ion-option>
+          <ion-option value="3">💲💲💲</ion-option>
+          <ion-option value="4">💲💲💲💲</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Minimum Rating</ion-label>
+        <ion-select [(ngModel)]="minRating" multiple="False" cancelText="Cancel" okText="Select" name="minRating">
+          <ion-option value="1" selected="true">⭐</ion-option>
+          <ion-option value="2">⭐⭐</ion-option>
+          <ion-option value="3">⭐⭐⭐</ion-option>
+          <ion-option value="4">⭐⭐⭐⭐</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-range min="1" max="15" step="1" snaps="true" pin="true" [(ngModel)]="distance" class="distance-range" name="distance">
+          <ion-icon range-left small name="walk"></ion-icon>
+          <ion-icon range-right name="walk"></ion-icon>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button block color="default" (click)="findFood()" type="submit" class="submit-btn">Find Food!</button>
+  
+  </form>
+</ion-content>

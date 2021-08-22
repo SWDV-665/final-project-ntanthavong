@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ResultsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="../../assets/imgs/dinder_logo.png" class="nav-brand" alt="Dinder Logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-slides pager (ionSlideDidChange)="loadPhoto()">
+
+    <ion-slide class="slide" *ngFor="let restaurant of results">
+      <h1 class="restaurant-name">{{restaurant.name}}</h1>
+      <img src="" id="{{restaurant.place_id}}" class="restaurant-photo">
+      <h2>Price: {{restaurant.price_level}}</h2>
+      <h2>Rating: {{restaurant.rating}}/5</h2>
+      <h2>{{restaurant.vicinity}}</h2>
+    </ion-slide>
+  
+  </ion-slides>
+
+</ion-content>
